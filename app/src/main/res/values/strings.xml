@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Intempus</string>
+    <string name="selected_date">Selected date: %1$s</string>
+    <string name="set_date">Set date</string>
+    <string name="selected_time">Selected time: %1$s</string>
+    <string name="set_time">Set time</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
 </resources>
