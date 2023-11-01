@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
@@ -17,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.intempus.R
+import com.example.intempus.data.toTimeFormat
 import java.time.LocalDateTime
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -34,7 +36,9 @@ fun TimePickerScreen(
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceEvenly
+        verticalArrangement = Arrangement.SpaceEvenly,
+        modifier = Modifier
+            .fillMaxSize()
     ) {
         TimePicker(state = timePickerState)
         Spacer(modifier = Modifier.height(30.dp))
@@ -48,7 +52,7 @@ fun TimePickerScreen(
             Spacer(modifier = Modifier.width(50.dp))
             Button(
                 modifier = Modifier,
-                onClick = { onConfirm("${timePickerState.hour}-${timePickerState.minute}") }
+                onClick = { onConfirm(toTimeFormat(timePickerState.hour, timePickerState.minute)) }
             ) {
                 Text(text = stringResource(R.string.confirm))
             }

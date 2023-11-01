@@ -6,4 +6,6 @@
     <string name="set_time">Set time</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
+    <string name="future_datetime_error">Selected time must not be in the future!</string>
+    <string name="submited">Submited.</string>
 </resources>
